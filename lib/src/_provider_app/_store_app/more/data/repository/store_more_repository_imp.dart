@@ -19,7 +19,7 @@ class StoreMoreRepositoryImp implements StoreMoreRepository {
   @override
   DomainServiceType<StoreEntity> getUserData() async {
     return await failureCollect<StoreEntity>(() async {
-      final result = await _apiHelper.get(url: ApiConstants.flavorApi("auth/profile"));
+      final result = await _apiHelper.get(url: ApiConstants.addToApiUrlPath("auth/profile"));
       final data = ApiStoreModel.fromJson(result['data']);
       return Right(data.map);
     });
@@ -28,7 +28,7 @@ class StoreMoreRepositoryImp implements StoreMoreRepository {
   @override
   DomainServiceType<StoreEntity> updateUserData(UpdateStoreProfileParams params) async {
     return await failureCollect<StoreEntity>(() async {
-      final result = await _apiHelper.post(url: ApiConstants.flavorApi("auth/update-profile"), body: params.toMap);
+      final result = await _apiHelper.post(url: ApiConstants.addToApiUrlPath("auth/update-profile"), body: params.toMap);
       StoreEntity data = ApiStoreModel.fromJson(List.from(result['data']).firstOrNull).map;
       switch (EnvironmentsConfig.appEnvironment) {
         case AppEnvironmentEnum.client:

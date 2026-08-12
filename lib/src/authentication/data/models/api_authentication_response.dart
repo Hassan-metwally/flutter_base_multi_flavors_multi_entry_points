@@ -1,4 +1,6 @@
 import '../../../../core/core.dart';
+import '../../../../environment_configs.dart';
+import '../../../_provider_app/select_role/provider_app_role.dart';
 import 'api_user_model.dart';
 
 class ApiLoggedUserResponse {
@@ -7,8 +9,26 @@ class ApiLoggedUserResponse {
 
   const ApiLoggedUserResponse({required this.accessToken, required this.user});
 
-  factory ApiLoggedUserResponse.fromJson(Map<String, dynamic> json) =>
-      ApiLoggedUserResponse(accessToken: json["access_token"] ?? '', user: ApiUserModel.fromJson(json));
+  factory ApiLoggedUserResponse.fromJson(Map<String, dynamic> json) {
+    return ApiLoggedUserResponse(
+      accessToken: json["token"] ?? '',
+      user: ApiUserModel.fromJson(_userJsonForEnvironment(json)),
+    );
+  }
+
+  static Map<String, dynamic> _userJsonForEnvironment(Map<String, dynamic> json) {
+    switch (EnvironmentsConfig.appEnvironment) {
+      case AppEnvironmentEnum.client:
+        return json["user"];
+      case AppEnvironmentEnum.provider:
+        if (CurrentProviderAppRole.isStore) {
+          return json["store"];
+        } else if (CurrentProviderAppRole.isRepresentative) {
+          return json["representative"];
+        }
+    }
+    throw Exception('Invalid app environment or provider role');
+  }
 
   TokenModel get getTokenForSingleSession {
     if (accessToken.isEmpty) {

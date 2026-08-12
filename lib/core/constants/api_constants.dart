@@ -3,18 +3,18 @@ part of core;
 class ApiConstants {
   const ApiConstants._();
 
-  // static const String apiBaseUrl = "https://backend.azahmni.moltaqadev.com";
-  static const String apiBaseUrl = "https://backend.azhmny.com/";
+  static const String apiBaseUrl = "https://api-zahab.dev-moltaqa.cloud";
+  // static const String apiBaseUrl = "https://api-zahab-moltaqa.cloud";
 
-  static String storeApi(String url) => "/store-api/v1/$url";
-  static String representativeApi(String url) => "/rep-api/v1/$url";
-  static String userApi(String url) => "/client-api/v1/$url";
-  static String sharedApi(String url) => "/shared-api/v1/$url";
+  static String storeApi(String url) => "/api/v1/client/$url";
+  static String representativeApi(String url) => "/api/v1/client/$url";
+  static String currentApi(String url) => "/api/v1/client/$url";
+  static String sharedApi(String url) => "/api/v1/client/$url";
 
-  static String flavorApi(String url) {
+  static String addToApiUrlPath(String url) {
     switch (EnvironmentsConfig.appEnvironment) {
       case AppEnvironmentEnum.client:
-        return userApi(url);
+        return currentApi(url);
       case AppEnvironmentEnum.provider:
         if (CurrentProviderAppRole.isStore) {
           return storeApi(url);

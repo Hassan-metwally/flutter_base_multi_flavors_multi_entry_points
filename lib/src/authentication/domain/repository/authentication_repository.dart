@@ -9,7 +9,7 @@ import '../use_case/verify_otp_use_case.dart';
 
 abstract class AuthenticationRepository {
   DomainServiceType<UserEntity> login(LoginParams params);
-  DomainServiceType<void> userRegister(UserRegisterParams params);
+  DomainServiceType<void> clientRegister(UserRegisterParams params);
   DomainServiceType<void> storeRegister(StoreRegisterParams params);
   DomainServiceType<void> verifyOtp(VerifyOtpParams params);
   DomainServiceType<void> resendOtp(ResendOtpParams params);
