@@ -68,16 +68,11 @@ class __PageBodyState extends State<_PageBody> {
   final formKey = GlobalKey<FormState>();
   late final ValidatorFieldController<AttachmentEntity?> _avatorController;
   late final TextEditingController _nameController;
- 
 
   void _onSavePressed() {
     final isValidForm = formKey.currentState?.validate() ?? false;
     if (isValidForm) {
-      final params = UpdateStoreProfileParams(
-        image: _avatorController.value,
-        name: _nameController.text,
-       
-      );
+      final params = UpdateStoreProfileParams(image: _avatorController.value, name: _nameController.text);
       context.read<StorePersonalProfileCubit>().updateProfile(params);
     }
   }
@@ -98,7 +93,6 @@ class __PageBodyState extends State<_PageBody> {
     super.initState();
     _avatorController = ValidatorFieldController<AttachmentEntity?>(initialValue: widget.user.avatar);
     _nameController = TextEditingController(text: widget.user.name);
-   
   }
 
   @override
@@ -127,7 +121,7 @@ class __PageBodyState extends State<_PageBody> {
                     ProfileAvatarWidget(controller: _avatorController),
                     const SizedBox(height: 20),
                     NameField(controller: _nameController, lable: appLocalizer.name, hint: ""),
-                   
+
                     const SizedBox(height: 20),
                     Row(
                       spacing: 8,
@@ -155,7 +149,7 @@ class __PageBodyState extends State<_PageBody> {
                         ),
                       ],
                     ),
-                    
+
                     const SizedBox(height: 20),
                   ],
                 ),

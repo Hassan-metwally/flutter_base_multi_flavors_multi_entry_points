@@ -1,4 +1,3 @@
-
 class CurrentProviderAppRole {
   static ProviderAppRoleEnum? providerAppRole;
 

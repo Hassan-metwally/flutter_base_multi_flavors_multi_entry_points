@@ -6,15 +6,15 @@ class ApiConstants {
   static const String apiBaseUrl = "https://api-zahab.dev-moltaqa.cloud";
   // static const String apiBaseUrl = "https://api-zahab-moltaqa.cloud";
 
-  static String storeApi(String url) => "/api/v1/client/$url";
-  static String representativeApi(String url) => "/api/v1/client/$url";
-  static String currentApi(String url) => "/api/v1/client/$url";
+  static String storeApi(String url) => "/api/v1/store/$url";
+  static String representativeApi(String url) => "/api/v1/representative/$url";
+  static String clientApi(String url) => "/api/v1/client/$url";
   static String sharedApi(String url) => "/api/v1/client/$url";
 
   static String addToApiUrlPath(String url) {
     switch (EnvironmentsConfig.appEnvironment) {
       case AppEnvironmentEnum.client:
-        return currentApi(url);
+        return clientApi(url);
       case AppEnvironmentEnum.provider:
         if (CurrentProviderAppRole.isStore) {
           return storeApi(url);

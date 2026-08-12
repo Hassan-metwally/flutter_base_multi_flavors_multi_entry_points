@@ -7,17 +7,10 @@ class CacheUserModel extends CacheUserEntity {
     required super.avatar,
     required super.mobile,
     required super.currentProviderRole,
-    
   });
 
   CacheUserModel.fromEntity(CacheUserEntity entity)
-    : this(
-        id: entity.id,
-        name: entity.name,
-        avatar: entity.avatar,
-        mobile: entity.mobile,
-        currentProviderRole: entity.currentProviderRole,
-      );
+    : this(id: entity.id, name: entity.name, avatar: entity.avatar, mobile: entity.mobile, currentProviderRole: entity.currentProviderRole);
 
   factory CacheUserModel.fromJson(String tokenJson) {
     final Map<String, dynamic> encodedMap = json.decode(tokenJson);
@@ -36,7 +29,6 @@ class CacheUserModel extends CacheUserEntity {
     _avatarKey: avatar,
     _kCacheMobileObjectKey: mobile,
     _kCurrentProviderRole: currentProviderRole.toString().split('.').last,
-
   };
 
   String get toJson => json.encode(toMap);

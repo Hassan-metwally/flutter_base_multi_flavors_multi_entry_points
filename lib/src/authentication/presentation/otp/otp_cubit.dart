@@ -40,7 +40,9 @@ class OtpCubit extends Cubit<OtpState> {
 
   void resendOtp() async {
     emit(state.copyWith(resendState: const Async.loading()));
-    final result = await _resendOtpUseCase(ResendOtpParams(phone: arguments.phone, countryCode: arguments.countryCode, verifyCase: arguments.verifyCase));
+    final result = await _resendOtpUseCase(
+      ResendOtpParams(phone: arguments.phone, countryCode: arguments.countryCode, verifyCase: arguments.verifyCase),
+    );
     result.fold(
       (failer) {
         emit(state.copyWith(resendState: Async.failure(failer)));

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/core.dart';
 import '../../../../../../material/media/svg_icon.dart';
 
-
 class StoreHomeEmptyWidget extends StatelessWidget {
   final String? message;
   final String? iconPath;

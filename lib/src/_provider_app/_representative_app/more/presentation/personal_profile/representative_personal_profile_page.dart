@@ -102,7 +102,6 @@ class __PageBodyState extends State<_PageBody> {
                 readOnly: true,
               ),
               PhoneField(controller: TextEditingController(text: widget.user.mobile), readOnly: true),
-             
             ],
           ),
         ),

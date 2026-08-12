@@ -80,7 +80,7 @@ class _SelectProviderAppRolePageState extends State<SelectProviderAppRolePage> {
                             color: providerAppRole == ProviderAppRoleEnum.store ? AppColors.primary100 : AppColors.white,
                             border: providerAppRole == ProviderAppRoleEnum.store ? Border.all(color: AppColors.primary, width: 1.5) : null,
                           ),
-                          child: Text(  "", textAlign: TextAlign.end, style: TextStyles.medium18),
+                          child: Text("", textAlign: TextAlign.end, style: TextStyles.medium18),
                         ),
                         Positioned.directional(
                           start: 16,

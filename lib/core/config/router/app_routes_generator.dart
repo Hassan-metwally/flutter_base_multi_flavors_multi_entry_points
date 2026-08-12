@@ -35,7 +35,6 @@ import '../../core.dart';
 import '../../di/di.dart';
 import 'app_routes.dart';
 
-
 class AppRoutesGenerator {
   const AppRoutesGenerator._();
 
@@ -53,11 +52,10 @@ class AppRoutesGenerator {
         page = BlocProvider(create: (context) => StoreRegisterCubit(), child: const StoreRegisterPage());
       case AppRoutes.storePersonalProfile:
         page = BlocProvider(create: (context) => injector<StorePersonalProfileCubit>()..getData(), child: const StorePersonalProfilePage());
-   
+
       case AppRoutes.storeWalletPage:
         page = const StoreWalletPage();
-     
-     
+
       ////// Representative App Pages ////
       case AppRoutes.representativeLoginPage:
         page = BlocProvider(create: (context) => LoginCubit(), child: const RepresentativeLoginPage());
@@ -66,7 +64,7 @@ class AppRoutesGenerator {
           create: (context) => injector<RepresentativePersonalProfileCubit>()..getData(),
           child: const RepresentativePersonalProfilePage(),
         );
-    
+
       case AppRoutes.representativeWalletPage:
         page = const RepresentativeWalletPage();
 
@@ -82,14 +80,12 @@ class AppRoutesGenerator {
         );
       case AppRoutes.myAddressesPage:
         page = BlocProvider(create: (context) => injector<MyAddressesCubit>()..getAddresses(), child: const MyAddressesPage());
-     
-     
+
       case AppRoutes.cartPage:
         page = const CartPage();
 
       case AppRoutes.clientWalletPage:
         page = const ClientWalletPage();
-      
 
       /// Common and static and common pages
       ///

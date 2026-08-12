@@ -25,13 +25,9 @@ class LoginParams extends Equatable {
   const LoginParams({required this.countryCode, required this.phone});
 
   Future<Map<String, dynamic>> get toMap async {
-    return {
-      "country_code": countryCode,
-      "phone": (phone.isNotEmpty && !phone.startsWith('0')) ? '0$phone' : phone,
-    };
+    return {"country_code": countryCode, "phone": (phone.isNotEmpty && !phone.startsWith('0')) ? '0$phone' : phone};
   }
 
   @override
   List<Object?> get props => [countryCode, phone];
 }
-

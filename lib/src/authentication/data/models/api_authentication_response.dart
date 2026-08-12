@@ -10,10 +10,7 @@ class ApiLoggedUserResponse {
   const ApiLoggedUserResponse({required this.accessToken, required this.user});
 
   factory ApiLoggedUserResponse.fromJson(Map<String, dynamic> json) {
-    return ApiLoggedUserResponse(
-      accessToken: json["token"] ?? '',
-      user: ApiUserModel.fromJson(_userJsonForEnvironment(json)),
-    );
+    return ApiLoggedUserResponse(accessToken: json["token"] ?? '', user: ApiUserModel.fromJson(_userJsonForEnvironment(json)));
   }
 
   static Map<String, dynamic> _userJsonForEnvironment(Map<String, dynamic> json) {
@@ -22,9 +19,9 @@ class ApiLoggedUserResponse {
         return json["user"];
       case AppEnvironmentEnum.provider:
         if (CurrentProviderAppRole.isStore) {
-          return json["store"];
+          return json["user"];
         } else if (CurrentProviderAppRole.isRepresentative) {
-          return json["representative"];
+          return json["user"];
         }
     }
     throw Exception('Invalid app environment or provider role');
