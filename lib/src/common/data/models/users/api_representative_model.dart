@@ -19,7 +19,7 @@ class ApiRepresentativeModel extends ApiUserModel {
   factory ApiRepresentativeModel.fromJson(Map<String, dynamic> json) => ApiRepresentativeModel(
     id: json["id"],
     name: json["name"],
-    mobile: json["mobile"],
+    mobile: json["phone"],
     avatar: json["avatar"] != null ? AttachmentEntity.fromNetwork(url: json["avatar"]) : null,
     isVerified: json["is_verified"],
     isActive: json["is_active"],

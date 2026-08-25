@@ -15,8 +15,8 @@ class RepresentativeMoreRepositoryImp implements RepresentativeMoreRepository {
   @override
   DomainServiceType<RepresentativeEntity> getUserData() async {
     return await failureCollect<RepresentativeEntity>(() async {
-      final result = await _apiHelper.get(url: ApiConstants.addToApiUrlPath("auth/profile"));
-      final data = ApiRepresentativeModel.fromJson(result['data']);
+      final result = await _apiHelper.get(url: ApiConstants.addToApiUrlPath("profile"));
+      final data = ApiRepresentativeModel.fromJson(result['data']["user"]);
       return Right(data.map);
     });
   }

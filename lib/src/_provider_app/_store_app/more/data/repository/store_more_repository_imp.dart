@@ -19,8 +19,8 @@ class StoreMoreRepositoryImp implements StoreMoreRepository {
   @override
   DomainServiceType<StoreEntity> getUserData() async {
     return await failureCollect<StoreEntity>(() async {
-      final result = await _apiHelper.get(url: ApiConstants.addToApiUrlPath("auth/profile"));
-      final data = ApiStoreModel.fromJson(result['data']);
+      final result = await _apiHelper.get(url: ApiConstants.addToApiUrlPath("profile"));
+      final data = ApiStoreModel.fromJson(result['data']["user"]);
       return Right(data.map);
     });
   }
@@ -28,8 +28,8 @@ class StoreMoreRepositoryImp implements StoreMoreRepository {
   @override
   DomainServiceType<StoreEntity> updateUserData(UpdateStoreProfileParams params) async {
     return await failureCollect<StoreEntity>(() async {
-      final result = await _apiHelper.post(url: ApiConstants.addToApiUrlPath("auth/update-profile"), body: params.toMap);
-      StoreEntity data = ApiStoreModel.fromJson(List.from(result['data']).firstOrNull).map;
+      final result = await _apiHelper.post(url: ApiConstants.addToApiUrlPath("profile"), body: params.toMap);
+      StoreEntity data = ApiStoreModel.fromJson(result['data']["user"]).map;
       switch (EnvironmentsConfig.appEnvironment) {
         case AppEnvironmentEnum.client:
           data = data.copyWith(clearCurrentProviderRole: true);
@@ -40,7 +40,6 @@ class StoreMoreRepositoryImp implements StoreMoreRepository {
             data = data.copyWith(currentProviderRole: ProviderAppRoleEnum.representative);
           }
       }
-
       await _secureStorage.setCachedUser(data.mapToCacheEntity);
       return Right(data);
     });
