@@ -1,4 +1,5 @@
 import '../../../../../core/core.dart';
+import '../../../../_provider_app/select_role/provider_app_role.dart';
 import '../../../../authentication/data/models/api_user_model.dart';
 import '../../../domain/entity/users/representative_entity.dart';
 import '../../../domain/enums/store_status_enum.dart';
@@ -36,6 +37,6 @@ extension ApiRepresentativeProfileModelEXT on ApiRepresentativeModel {
     isVerified: isVerified,
     isActive: isActive ?? false,
     storeStatus: providerStatus ?? StroeStatusEnum.closed,
-    currentProviderRole: null,
+    currentProviderRole: ProviderAppRoleEnum.representative,
   );
 }

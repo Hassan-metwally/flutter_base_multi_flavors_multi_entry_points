@@ -19,4 +19,3 @@ class _ClientHomeBodyState extends State<_ClientHomeBody> {
     );
   }
 }
-

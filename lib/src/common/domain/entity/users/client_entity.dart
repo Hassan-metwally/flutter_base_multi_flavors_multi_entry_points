@@ -34,7 +34,7 @@ class ClientEntity extends UserEntity {
       mobile: mobile ?? this.mobile,
       avatar: avatar ?? this.avatar,
       isVerified: isVerified ?? this.isVerified,
-      currentProviderRole: currentProviderRole ?? this.currentProviderRole,
+      currentProviderRole: clearCurrentProviderRole == true ? null : currentProviderRole ?? this.currentProviderRole,
     );
   }
 }

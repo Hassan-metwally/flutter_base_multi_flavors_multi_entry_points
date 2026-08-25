@@ -49,7 +49,7 @@ class RepresentativeEntity extends UserEntity {
       isVerified: isVerified ?? this.isVerified,
       isActive: isActive ?? this.isActive,
       storeStatus: storeStatus ?? this.storeStatus,
-      currentProviderRole: currentProviderRole ?? this.currentProviderRole,
+      currentProviderRole: clearCurrentProviderRole == true ? null : currentProviderRole ?? this.currentProviderRole,
     );
   }
 
