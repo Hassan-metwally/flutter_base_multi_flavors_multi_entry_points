@@ -52,10 +52,13 @@ class _RepresentativeMainPageState extends State<RepresentativeMainPage> with Re
 
   @override
   void initState() {
+    super.initState();
     FirebaseHelper.setUpNotificationListener();
     initObserver(onTabChanged: _onCurrentTapChanged);
     _addUnAuthenticatedListener();
-    super.initState();
+    // if (!GuestCheckerWidget.isGuest(context)) {
+    //   PusherHandler.instance.initialize();
+    // }
   }
 
   @override
