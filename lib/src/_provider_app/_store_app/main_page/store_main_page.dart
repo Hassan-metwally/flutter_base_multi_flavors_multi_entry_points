@@ -55,9 +55,17 @@ class _StoreMainPageState extends State<StoreMainPage> with StoreMainPageObserve
     FirebaseHelper.setUpNotificationListener();
     initObserver(onTabChanged: _onCurrentTapChanged);
     _addUnAuthenticatedListener();
+
+    // // Pusher Initialize
     // if (!GuestCheckerWidget.isGuest(context)) {
     //   PusherHandler.instance.initialize();
     // }
+
+    // // Deep Links Initialize
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+    //   DeepLinksUtils.intit();
+    // });
+    
   }
 
   @override

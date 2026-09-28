@@ -35,7 +35,6 @@ class ProviderApp extends StatelessWidget {
         providers: [
           BlocProvider(create: (context) => AppLanguageCubit()..init()),
           BlocProvider(create: (context) => AppAuthenticationBloc()..add(const AppStartedEvent())),
-          // BlocProvider(create: (context) => NotificationsCubit()),
         ],
         child: BlocBuilder<AppLanguageCubit, AppLanguageState>(
           builder: (context, state) {
