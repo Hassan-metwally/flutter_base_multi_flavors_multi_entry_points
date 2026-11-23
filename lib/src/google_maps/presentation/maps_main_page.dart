@@ -2,6 +2,7 @@
 
 import 'dart:async';
 
+import 'package:azhimny/src/google_maps/utils/maps_constants.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,7 +20,7 @@ import 'maps_main_cubit.dart';
 import 'maps_main_state.dart';
 import 'widgets/maps_app_bar_widget.dart';
 
-part 'widgets/only_preview_widgets.dart';
+part 'widgets/maps_only_preview_widgets.dart';
 part "widgets/selectable_map_widgets.dart";
 
 const CameraPosition _kInitialPosition = CameraPosition(target: LatLng(24.774265, 46.738586), zoom: 11.0);
@@ -152,7 +153,7 @@ class _MapsMainPageBodyState extends State<_MapsMainPageBody> {
               if (!isOnlyForPreview)
                 _SelectableMapWidgets(canAddTittleForAddress: widget.canAddTittleForAddress)
               else
-                _OnlyMapAddressPreviewWidget(
+                _MapsOnlyPreviewWidget(
                   addressEntity: widget.initialMapAddress!,
                   onAddressTapped: () {
                     _setMapPosition(widget.initialMapAddress!.getAsaLtLng);
