@@ -6,6 +6,7 @@ import '../../../../../core/core.dart';
 import '../../../../../material/auth_states/logged_user_checker_widget.dart';
 import '../../../../../material/media/app_image.dart';
 import '../../../../../material/media/svg_icon.dart';
+import '../../../../ads/presentation/ads/ads_widget.dart';
 import '../../../../notifications/presentation/widgets/notification_button.dart';
 
 part 'widgets/store_home_app_bar.dart';
@@ -16,8 +17,16 @@ class StoreHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(top: false, child: Column(children: [_StoreHomeAppBar(), _StoreHomeBody()])),
+    return Scaffold(
+      body: SafeArea(
+        top: false,
+        child: Column(
+          children: [
+            _StoreHomeAppBar(),
+            Expanded(child: _StoreHomeBody()),
+          ],
+        ),
+      ),
     );
   }
 }

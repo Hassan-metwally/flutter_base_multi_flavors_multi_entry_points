@@ -8,30 +8,25 @@ class _StoreHomeBody extends StatefulWidget {
 }
 
 class _StoreHomeBodyState extends State<_StoreHomeBody> {
+  Future<void> Function()? _refreshAds;
+  Future<void> _onRefresh() {
+    return Future.wait([_refreshAds?.call() ?? Future<void>.value()]);
+  }
+
+  void _bindAds(Future<void> Function()? refresh) => _refreshAds = refresh;
+
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: LiquidPullToRefresh(
-        backgroundColor: AppColors.primary,
-        color: Colors.transparent,
-        showChildOpacityTransition: false,
-        onRefresh: () async {
-          setState(() {});
-        },
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: Column(
-            children: [
-              // ProviderStatisticsWidget(key: UniqueKey()),
-              const SizedBox(height: 16),
-              // _ServiceOrdersSection(key: UniqueKey()),
-              const SizedBox(height: 16),
-              // _ProductsOrdersSection(key: UniqueKey()),
-              // const SizedBox(height: 100),
-            ],
-          ),
-        ),
+    return LiquidPullToRefresh(
+      color: AppColors.backgroundColor,
+      backgroundColor: AppColors.primary,
+      onRefresh: _onRefresh,
+      child: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(child: AdsWidget(onBindRefresh: _bindAds)),
+          const SliverToBoxAdapter(child: SizedBox(height: 20)),
+          SliverToBoxAdapter(child: SizedBox(height: 20)),
+        ],
       ),
     );
   }
