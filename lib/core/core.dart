@@ -22,7 +22,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:uuid/uuid.dart';
 
 import '../environment_configs.dart';
-import '../src/_provider_app/select_role/provider_app_role.dart';
+import '../src/_provider_app/provider_select_role/provider_app_role.dart';
 import '../src/notifications/helpers/firebase/firebase_helper.dart';
 import 'base/localization/l10n/app_localizations.dart';
 import 'base/localization/l10n/app_localizations_ar.dart';

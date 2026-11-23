@@ -7,12 +7,12 @@ import '../../../src/_client_app/addresses/presentation/my_addresses/my_addresse
 import '../../../src/_client_app/cart/presentation/cart_page/cart_page.dart';
 import '../../../src/_client_app/client_app.dart';
 
-import '../../../src/_client_app/more/presentation/personal_profile/client_personal_profile_cubit.dart';
-import '../../../src/_client_app/more/presentation/personal_profile/client_personal_profile_page.dart';
-import '../../../src/_provider_app/_representative_app/more/presentation/personal_profile/representative_personal_profile_cubit.dart';
-import '../../../src/_provider_app/_representative_app/more/presentation/personal_profile/representative_personal_profile_page.dart';
-import '../../../src/_provider_app/_store_app/more/presentation/personal_profile/store_personal_profile_cubit.dart';
-import '../../../src/_provider_app/_store_app/more/presentation/personal_profile/store_personal_profile_page.dart';
+import '../../../src/_client_app/client_more/presentation/client_personal_profile/client_personal_profile_cubit.dart';
+import '../../../src/_client_app/client_more/presentation/client_personal_profile/client_personal_profile_page.dart';
+import '../../../src/_provider_app/_representative_app/representative_more/presentation/representative_personal_profile/representative_personal_profile_cubit.dart';
+import '../../../src/_provider_app/_representative_app/representative_more/presentation/representative_personal_profile/representative_personal_profile_page.dart';
+import '../../../src/_provider_app/_store_app/store_more/presentation/store_personal_profile/store_personal_profile_cubit.dart';
+import '../../../src/_provider_app/_store_app/store_more/presentation/store_personal_profile/store_personal_profile_page.dart';
 import '../../../src/_provider_app/provider_app.dart';
 import '../../../src/authentication/presentation/_client_register/client_register_cubit.dart';
 import '../../../src/authentication/presentation/_client_register/client_register_page.dart';

@@ -11,7 +11,7 @@ import '../../../material/app_fail_widget.dart';
 import '../../../material/media/app_image.dart';
 import '../../../material/read_more.dart';
 import '../../../material/spin_kit_loading_widget.dart';
-import '../../_provider_app/select_role/provider_app_role.dart';
+import '../../_provider_app/provider_select_role/provider_app_role.dart';
 import '../../chat/domain/entities/chat_page_input.dart';
 import '../../chat/presentation/chat_page.dart';
 import '../domain/entities/norification_entity.dart';

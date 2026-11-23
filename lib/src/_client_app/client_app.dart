@@ -14,8 +14,8 @@ import '../../core/di/di.dart';
 import '../authentication/presentation/login/client_login_page.dart';
 import '../authentication/presentation/login/login_cubit.dart';
 import '../common/presentation/splash/splash_page.dart';
-import 'main_page/client_main_page.dart';
-import 'onboarding/client_onboarding_page.dart';
+import 'client_main_page/client_main_page.dart';
+import 'client_onboarding/client_onboarding_page.dart';
 
 class ClientApp extends StatelessWidget {
   const ClientApp({super.key});

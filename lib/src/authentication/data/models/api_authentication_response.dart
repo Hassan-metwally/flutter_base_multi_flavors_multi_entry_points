@@ -1,6 +1,6 @@
 import '../../../../core/core.dart';
 import '../../../../environment_configs.dart';
-import '../../../_provider_app/select_role/provider_app_role.dart';
+import '../../../_provider_app/provider_select_role/provider_app_role.dart';
 import 'api_user_model.dart';
 
 class ApiLoggedUserResponse {

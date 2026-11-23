@@ -3,7 +3,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../../../core/core.dart';
 import '../../../../environment_configs.dart';
-import '../../../_provider_app/select_role/provider_app_role.dart';
+import '../../../_provider_app/provider_select_role/provider_app_role.dart';
 import '../../domain/entities/user_entity.dart';
 import '../../domain/repository/authentication_repository.dart';
 import '../../domain/use_case/_client_register_use_case.dart';

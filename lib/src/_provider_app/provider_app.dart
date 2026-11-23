@@ -13,11 +13,11 @@ import '../../core/core.dart';
 import '../../core/di/di.dart';
 import '../../environment_configs.dart';
 import '../common/presentation/splash/splash_page.dart';
-import '_representative_app/main_page/representative_main_page.dart';
-import '_store_app/main_page/store_main_page.dart';
-import 'onboarding/provider_onboarding_page.dart';
-import 'select_role/provider_app_role.dart';
-import 'select_role/select_provider_app_role_page.dart';
+import '_representative_app/representative_main_page/representative_main_page.dart';
+import '_store_app/store_main_page/store_main_page.dart';
+import 'provider_onboarding/provider_onboarding_page.dart';
+import 'provider_select_role/provider_app_role.dart';
+import 'provider_select_role/select_provider_app_role_page.dart';
 
 class ProviderApp extends StatelessWidget {
   const ProviderApp({super.key});

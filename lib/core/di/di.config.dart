@@ -51,39 +51,39 @@ import '../../src/_client_app/cart/presentation/update_cart_delivery_fees/update
     as _i308;
 import '../../src/_client_app/cart/presentation/upsert_cart_item/upsert_cart_item_cubit.dart'
     as _i293;
-import '../../src/_client_app/more/data/repository/client_more_repository_imp.dart'
+import '../../src/_client_app/client_more/data/repository/client_more_repository_imp.dart'
     as _i754;
-import '../../src/_client_app/more/domain/repository/client_more_repository.dart'
+import '../../src/_client_app/client_more/domain/repository/client_more_repository.dart'
     as _i297;
-import '../../src/_client_app/more/domain/use_cases/get_client_profile_use_case.dart'
+import '../../src/_client_app/client_more/domain/use_cases/client_get_profile_use_case.dart'
     as _i649;
-import '../../src/_client_app/more/domain/use_cases/update_client_profile_use_case.dart'
+import '../../src/_client_app/client_more/domain/use_cases/client_update_profile_use_case.dart'
     as _i411;
-import '../../src/_client_app/more/presentation/more_page/client_more_cubit.dart'
+import '../../src/_client_app/client_more/presentation/client_more_page/client_more_cubit.dart'
     as _i307;
-import '../../src/_client_app/more/presentation/personal_profile/client_personal_profile_cubit.dart'
+import '../../src/_client_app/client_more/presentation/client_personal_profile/client_personal_profile_cubit.dart'
     as _i291;
-import '../../src/_provider_app/_representative_app/more/data/repository/representative_more_repository_imp.dart'
+import '../../src/_provider_app/_representative_app/representative_more/data/repository/representative_more_repository_imp.dart'
     as _i645;
-import '../../src/_provider_app/_representative_app/more/domain/repository/representative_more_repository.dart'
+import '../../src/_provider_app/_representative_app/representative_more/domain/repository/representative_more_repository.dart'
     as _i884;
-import '../../src/_provider_app/_representative_app/more/domain/use_cases/get_representative_profile_use_case.dart'
+import '../../src/_provider_app/_representative_app/representative_more/domain/use_cases/representative_get_profile_use_case.dart'
     as _i423;
-import '../../src/_provider_app/_representative_app/more/presentation/more_page/representative_more_cubit.dart'
+import '../../src/_provider_app/_representative_app/representative_more/presentation/representative_more_page/representative_more_cubit.dart'
     as _i1041;
-import '../../src/_provider_app/_representative_app/more/presentation/personal_profile/representative_personal_profile_cubit.dart'
+import '../../src/_provider_app/_representative_app/representative_more/presentation/representative_personal_profile/representative_personal_profile_cubit.dart'
     as _i89;
-import '../../src/_provider_app/_store_app/more/data/repository/store_more_repository_imp.dart'
+import '../../src/_provider_app/_store_app/store_more/data/repository/store_more_repository_imp.dart'
     as _i53;
-import '../../src/_provider_app/_store_app/more/domain/repository/store_more_repository.dart'
+import '../../src/_provider_app/_store_app/store_more/domain/repository/store_more_repository.dart'
     as _i38;
-import '../../src/_provider_app/_store_app/more/domain/use_cases/get_store_profile_use_case.dart'
+import '../../src/_provider_app/_store_app/store_more/domain/use_cases/store_get_profile_use_case.dart'
     as _i477;
-import '../../src/_provider_app/_store_app/more/domain/use_cases/update_store_profile_use_case.dart'
+import '../../src/_provider_app/_store_app/store_more/domain/use_cases/store_update_profile_use_case.dart'
     as _i489;
-import '../../src/_provider_app/_store_app/more/presentation/more_page/store_more_cubit.dart'
+import '../../src/_provider_app/_store_app/store_more/presentation/store_more_page/store_more_cubit.dart'
     as _i519;
-import '../../src/_provider_app/_store_app/more/presentation/personal_profile/store_personal_profile_cubit.dart'
+import '../../src/_provider_app/_store_app/store_more/presentation/store_personal_profile/store_personal_profile_cubit.dart'
     as _i667;
 import '../../src/ads/data/datasources/ads_datasource.dart' as _i268;
 import '../../src/ads/data/repositories/ads_repository_impl.dart' as _i331;
@@ -398,21 +398,21 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i309.ChatsInboxDatasource>(
       () => _i309.ChatsInboxDatasourceImpl(gh<_i351.DioHelper>()),
     );
-    gh.factory<_i477.GetStoreProfileUseCase>(
-      () => _i477.GetStoreProfileUseCase(gh<_i38.StoreMoreRepository>()),
+    gh.factory<_i477.StoreGetProfileUseCase>(
+      () => _i477.StoreGetProfileUseCase(gh<_i38.StoreMoreRepository>()),
     );
-    gh.factory<_i489.UpdateStoreProfileUseCase>(
-      () => _i489.UpdateStoreProfileUseCase(gh<_i38.StoreMoreRepository>()),
+    gh.factory<_i489.StoreUpdateProfileUseCase>(
+      () => _i489.StoreUpdateProfileUseCase(gh<_i38.StoreMoreRepository>()),
     );
     gh.factory<_i209.NotificationRepository>(
       () =>
           _i1047.NotificationRepositoryImp(gh<_i529.NotificationDataSource>()),
     );
-    gh.factory<_i411.UpdateClientProfileUseCase>(
-      () => _i411.UpdateClientProfileUseCase(gh<_i297.ClientMoreRepository>()),
+    gh.factory<_i411.ClientUpdateProfileUseCase>(
+      () => _i411.ClientUpdateProfileUseCase(gh<_i297.ClientMoreRepository>()),
     );
-    gh.factory<_i649.GetClientProfileUseCase>(
-      () => _i649.GetClientProfileUseCase(gh<_i297.ClientMoreRepository>()),
+    gh.factory<_i649.ClientGetProfileUseCase>(
+      () => _i649.ClientGetProfileUseCase(gh<_i297.ClientMoreRepository>()),
     );
     gh.factory<_i904.UpdateUserLocationUseCase>(
       () => _i904.UpdateUserLocationUseCase(gh<_i410.MapsRepository>()),
@@ -483,12 +483,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i667.StorePersonalProfileCubit>(
       () => _i667.StorePersonalProfileCubit(
-        gh<_i477.GetStoreProfileUseCase>(),
-        gh<_i489.UpdateStoreProfileUseCase>(),
+        gh<_i477.StoreGetProfileUseCase>(),
+        gh<_i489.StoreUpdateProfileUseCase>(),
       ),
     );
-    gh.factory<_i423.GetRepresentativeProfileUseCase>(
-      () => _i423.GetRepresentativeProfileUseCase(
+    gh.factory<_i423.RepresentativeGetProfileUseCase>(
+      () => _i423.RepresentativeGetProfileUseCase(
         gh<_i884.RepresentativeMoreRepository>(),
       ),
     );
@@ -570,7 +570,7 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i89.RepresentativePersonalProfileCubit>(
       () => _i89.RepresentativePersonalProfileCubit(
-        gh<_i423.GetRepresentativeProfileUseCase>(),
+        gh<_i423.RepresentativeGetProfileUseCase>(),
       ),
     );
     gh.factory<_i532.DeleteCartItemCubit>(
@@ -590,8 +590,8 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i291.ClientPersonalProfileCubit>(
       () => _i291.ClientPersonalProfileCubit(
-        gh<_i649.GetClientProfileUseCase>(),
-        gh<_i411.UpdateClientProfileUseCase>(),
+        gh<_i649.ClientGetProfileUseCase>(),
+        gh<_i411.ClientUpdateProfileUseCase>(),
       ),
     );
     gh.factory<_i295.AddRateCubit>(

@@ -1,5 +1,5 @@
 import '../../../../../core/core.dart';
-import '../../../../_provider_app/select_role/provider_app_role.dart';
+import '../../../../_provider_app/provider_select_role/provider_app_role.dart';
 import '../../../../authentication/domain/entities/user_entity.dart';
 import '../../enums/store_status_enum.dart';
 
